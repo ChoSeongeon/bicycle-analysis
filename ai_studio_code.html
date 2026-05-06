@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조성언 | Portfolio</title>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --accent-light: #f0f9ff; /* 매우 연한 파스텔 하늘 */
+            --accent-point: #bae6fd; /* 포인트 파스텔 하늘 */
+            --accent-dark: #0284c7;  /* 텍스트용 진한 하늘 */
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 60px 24px;
+        }
+
+        .wrapper {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .profile-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-point);
+            border-radius: 99px;
+            color: var(--accent-dark);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            font-weight: 400;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Grid Layout */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card Component */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--accent-point);
+            background-color: var(--accent-light);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(186, 230, 253, 0.2);
+        }
+
+        .icon-container {
+            width: 44px;
+            height: 44px;
+            background-color: #f9fafb;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            transition: var(--transition);
+            color: var(--text-muted);
+        }
+
+        .card:hover .icon-container {
+            background-color: white;
+            color: var(--accent-dark);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Portfolio Highlight Button */
+        .highlight-card {
+            grid-column: span 2;
+            background-color: var(--text-main);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .highlight-card { grid-column: span 1; }
+        }
+
+        .highlight-card:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        /* Animation */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .wrapper {
+            animation: slideUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <span class="profile-badge">Available for Work</span>
+            <h1>조성언입니다.</h1>
+            <p class="description">미니멀리즘을 바탕으로 최상의 사용자 경험을 설계하는 개발자이자 디자이너입니다.</p>
+        </header>
+
+        <main class="link-grid">
+            <!-- Notion -->
+            <a href="https://www.notion.so/1e484b8ef9e480f2a10fcbe6bcf3f946?source=copy_link" target="_blank" class="card">
+                <div class="icon-container">
+                    <i data-lucide="layout"></i>
+                </div>
+                <h3>Notion Portfolio</h3>
+                <p>상세 프로젝트와 기술 블로그</p>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://kr.linkedin.com/" target="_blank" class="card">
+                <div class="icon-container">
+                    <i data-lucide="linkedin"></i>
+                </div>
+                <h3>LinkedIn</h3>
+                <p>전문 커리어 네트워킹</p>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/seong_131?igsh=eXNqa2dscXNqcTNh&utm_source=qr" target="_blank" class="card">
+                <div class="icon-container">
+                    <i data-lucide="instagram"></i>
+                </div>
+                <h3>Instagram</h3>
+                <p>디자인 영감과 일상 기록</p>
+            </a>
+
+            <!-- Youtube -->
+            <a href="#" target="_blank" class="card">
+                <div class="icon-container">
+                    <i data-lucide="youtube"></i>
+                </div>
+                <h3>YouTube</h3>
+                <p>영상으로 담은 작업물</p>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:tjddjs030131@sookmyung.ac.kr" class="card" style="grid-column: span 2;">
+                <div class="icon-container">
+                    <i data-lucide="mail"></i>
+                </div>
+                <h3>Email Contact</h3>
+                <p>tjddjs030131@sookmyung.ac.kr</p>
+            </a>
+            
+            <!-- Download Button -->
+            <a href="portfolio.pdf" download class="highlight-card">
+                <i data-lucide="download-cloud"></i>
+                포트폴리오 PDF 다운로드
+            </a>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Cho Seong-eon. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // 아이콘 렌더링
+        lucide.createIcons();
+
+        // 부드러운 클릭 효과
+        document.querySelectorAll('.card, .highlight-card').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.style.transform = 'scale(0.97)');
+            btn.addEventListener('mouseup', () => btn.style.transform = '');
+        });
+    </script>
+</body>
+</html>
