@@ -6,7 +6,7 @@ import plotly.express as px
 import pydeck as pdk
 
 # 1. 페이지 설정 및 데이터베이스 확인
-st.set_page_config(page_title="따릉이 데이터 분석 대시보드", layout="wide")
+st.set_page_config(page_title="서울시 따릉이 자전거 공공데이터 분석 대시보드", layout="wide")
 
 DB_FILE = "bicycle.db"
 
